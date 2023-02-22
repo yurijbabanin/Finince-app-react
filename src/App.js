@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import SelectorDate from './components/SelectorDate/SelectorDate'
+import Revenue from './components/Revenue/Revenue'
+import Cost from './components/Cost/Cost'
+import FinInfo from './components/FinInfo/FinInfo'
+import Spend from './components/Spend/Spend'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+    return <div>
+        {/*<Header />*/}
+        <SelectorDate />
+        <div className="flex justify-between justify-items-center p-5">
+            <div className="flex justify-between justify-items-center">
+        <Revenue />
+        <Cost />
+            </div>
+        <FinInfo />
+
+        <Spend />
+        </div>
+
     </div>
-  );
 }
 
 export default App;
