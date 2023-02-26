@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 
 const GET_PROFIT = 'http://localhost:5000/get_profit_per_month/1/2'
 
+
 const FinInfo = () => {
     const [profit, setProfit] = useState([])
     const [loading, setLoading] = useState(true)
@@ -21,13 +22,14 @@ const FinInfo = () => {
         }
         fetchDate()
     }, [])
+
     return(<div>
+
             {loading && 'Loading...'}
             {profit.map(profit => (
-                <p>Остаток средств за месяц: <strong>{profit.profit}</strong></p>
+                <p className="pt-10">Остаток средств за месяц: <strong>{profit.profit.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' Руб.'}</strong></p>
             ) )}
 
-                {/*<p>Остаток средств за месяц: {profit[1]}</p>*/}
         </div>
 
     )}

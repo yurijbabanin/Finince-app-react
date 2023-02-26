@@ -22,9 +22,9 @@ const Spend = () => {
         fetchDate()
     }, [])
     return(<div>
-            <h3>Ваши траты</h3>
-            <a href="#" className="text-lg text-center text-indigo-600">Добавить расход</a>
-            <table className="table-fixed border-separate border-spacing-2 border-solid border-2 border-indigo-600">
+            <h3 className="pb-5">Ваши траты</h3>
+
+            <table className="text-left table-fixed border-separate border-spacing-2 border-solid border-2 border-indigo-600 w-1/2">
                 <thead>
                 <tr>
                     <th>Дата</th>
@@ -41,11 +41,12 @@ const Spend = () => {
                     <td>{spend.date_d}.{spend.date_m}.{spend.date_y}</td>
                     <td>{spend.desc}</td>
                     <td>{spend.category}</td>
-                    <td>{spend.sum}</td>
+                    <td>{spend.sum.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' Руб.'}</td>
                 </tr>
             ) )}
                 </tbody>
             </table>
+            <a href="#" className="text-lg text-center text-indigo-600">Добавить расход</a>
         </div>
 
     )}

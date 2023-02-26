@@ -21,8 +21,8 @@ const Revenue = () => {
         fetchDate()
     }, [])
     return(<div>
-            <h3>Доходы</h3>
-            <table className="table-fixed border-separate border-spacing-2 border-solid border-2 border-indigo-600">
+            <h3 className="pb-5">Доходы</h3>
+            <table className="text-left table-fixed border-separate border-spacing-2 border-solid border-2 border-indigo-600">
                 <thead>
                 <tr>
                     <th>Описание</th>
@@ -34,7 +34,7 @@ const Revenue = () => {
                 {revenues.map(revenue => (
                     <tr key={revenue.id}>
                         <td>{revenue.desc}</td>
-                        <td>{revenue.sum}</td>
+                        <td>{revenue.sum.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' Руб.'}</td>
                     </tr>
                 ) )}
                 </tbody>

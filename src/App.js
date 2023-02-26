@@ -8,14 +8,22 @@ const App = () => {
     return <div>
         {/*<Header />*/}
         <SelectorDate />
-        <div className="flex justify-between justify-items-center p-5">
-            <div className="flex justify-between justify-items-center">
-        <Revenue />
+        <div className="">
+            <div className="flex flex-row">
+                <div className="basis-1/4">
+                    <Revenue />
+                    <FinInfo />
+                </div>
+            <div className="basis-1/4">
         <Cost />
             </div>
-        <FinInfo />
-
+            <div className="basis-1/2">
         <Spend />
+            </div>
+            </div>
+
+
+
         </div>
 
     </div>

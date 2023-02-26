@@ -22,8 +22,8 @@ const Cost = () => {
         fetchDate()
     }, [])
     return(<div>
-            <h3>Постоянные расходы</h3>
-            <table className="table-fixed border-separate border-spacing-2 border-solid border-2 border-indigo-600">
+            <h3 className="pb-5">Постоянные расходы</h3>
+            <table className="text-left border-separate border-spacing-2 border-solid border-2 border-indigo-600">
                 <thead>
                 <tr>
                     <th>Описание</th>
@@ -35,7 +35,7 @@ const Cost = () => {
                 {costs.map(spend => (
                     <tr key={spend.id}>
                         <td>{spend.desc}</td>
-                        <td>{spend.sum}</td>
+                        <td>{spend.sum.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' Руб.'}</td>
                     </tr>
                 ) )}
                 </tbody>
